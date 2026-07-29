@@ -15,3 +15,17 @@ description card built from `elp-per-screen-descriptions.md`.
 URLs (this environment cannot reach mcp.figma.com directly); to re-run, mint
 fresh URLs via the Figma MCP `upload_assets` tool, write them to
 `figma-screens/urls.tsv` (`<file>\t<url>` per line) and push.
+
+## Native rebuild (v2)
+
+All 86 screens were subsequently rebuilt as **editable native Figma layers**
+(auto-layout frames, real text, vector icons), replacing the image fills:
+
+- `specdata/` — the DOM-derived build specs (JSON, base64-chunked into SVG
+  text carriers so they could be shipped into the Figma canvas through the
+  upload relay, then decoded and built in-file by Plugin API scripts).
+- One page per flow (`01 · Onboarding & Auth` … `10 · Leave`); page
+  `00 · Foundations` holds the `ELP / Doc card` component, the `ELP / tokens`
+  variable collection (full palette + radius tokens) and the Quicksand/Inter
+  type-ramp text styles. All rebuilt layers bind fills/strokes/text colors to
+  the palette variables and use the shared text styles where they match.
