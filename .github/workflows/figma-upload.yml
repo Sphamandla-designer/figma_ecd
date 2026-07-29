@@ -1,5 +1,9 @@
 name: figma-upload
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/elp-screens-descriptions-tk2qap]
+    paths: [figma-screens/urls.tsv]
 jobs:
   upload:
     runs-on: ubuntu-latest
