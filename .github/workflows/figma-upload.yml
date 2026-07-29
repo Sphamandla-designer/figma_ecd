@@ -16,7 +16,9 @@ jobs:
           ok=0; fail=0
           while IFS=$'\t' read -r file url; do
             [ -z "$file" ] && continue
-            code=$(curl -sS -o /tmp/resp.txt -w '%{http_code}' -X POST -F "file=@figma-screens/$file;type=image/png" "$url") || code=err
+            ctype=image/png
+            case "$file" in *.svg) ctype=image/svg+xml;; esac
+            code=$(curl -sS -o /tmp/resp.txt -w '%{http_code}' -X POST -F "file=@figma-screens/$file;type=$ctype" "$url") || code=err
             if [ "$code" = "200" ]; then
               ok=$((ok+1))
             else
