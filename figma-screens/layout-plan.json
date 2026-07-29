@@ -1,0 +1,1196 @@
+[
+  {
+    "flow": "Onboarding & Auth",
+    "screens": [
+      {
+        "i": 0,
+        "file": "00.png",
+        "label": "Loading",
+        "w": 360,
+        "h": 768,
+        "matched": "1. Loading",
+        "card": {
+          "purpose": "session gate on launch — decides where the user lands.",
+          "decision": "routes to Home (valid session), unlock (PIN set), or sign-in (none); works offline.",
+          "states": "checking, → routed.",
+          "mvp": "offline-first, long-lived auth."
+        }
+      },
+      {
+        "i": 1,
+        "file": "01.png",
+        "label": "Enter phone number",
+        "w": 360,
+        "h": 768,
+        "matched": "2. Enter phone number",
+        "card": {
+          "purpose": "the single entry point (serves sign-in and sign-up).",
+          "decision": "one field the user knows — no username/password to invent. Prefilled +27.",
+          "states": "empty, typing, invalid.",
+          "mvp": "phone-based minimal entry."
+        }
+      },
+      {
+        "i": 2,
+        "file": "02.png",
+        "label": "Enter the code",
+        "w": 360,
+        "h": 768,
+        "matched": "3. Enter the code (OTP)",
+        "card": {
+          "purpose": "verify the number.",
+          "decision": "6-digit auto-advancing code; wrong code is retriable, nothing locks; resend timer.",
+          "states": "empty, entered, wrong code, resend, change number.",
+          "mvp": "OTP-verified sign-in, no lockouts."
+        }
+      },
+      {
+        "i": 3,
+        "file": "03.png",
+        "label": "Terms & consent",
+        "w": 360,
+        "h": 768,
+        "matched": "4. Terms & consent",
+        "card": {
+          "purpose": "evidenced agreement to terms & privacy.",
+          "decision": "three plain points + links to full docs (replacing the old legal walls); one checkbox.",
+          "states": "default, not-agreed (checkbox flags).",
+          "mvp": "consolidated consent, POPIA."
+        }
+      },
+      {
+        "i": 4,
+        "file": "04.png",
+        "label": "WhatsApp consent",
+        "w": 360,
+        "h": 768,
+        "matched": "5. WhatsApp consent",
+        "card": {
+          "purpose": "explicit opt-in for WhatsApp Business messaging.",
+          "decision": "a separate, skippable step — declining blocks nothing, withdrawable later.",
+          "states": "agree, skip.",
+          "mvp": "explicit evidenced WhatsApp/Meta consent."
+        }
+      },
+      {
+        "i": 5,
+        "file": "05.png",
+        "label": "Create a PIN",
+        "w": 360,
+        "h": 768,
+        "matched": "6. Create a PIN",
+        "card": {
+          "purpose": "optional quick-unlock.",
+          "decision": "skippable (an offer, not a wall); confirm step so it can't be set by mistake; works offline.",
+          "states": "create, confirm, mismatch (reset, no lockout), skipped.",
+          "mvp": "PIN unlock, offline."
+        }
+      },
+      {
+        "i": 6,
+        "file": "06.png",
+        "label": "Checking your details",
+        "w": 360,
+        "h": 768,
+        "matched": "7. Checking your details",
+        "card": {
+          "purpose": "brief interstitial while the account resolves.",
+          "decision": "routes to You've been invited (WL) or Your name (self-declare).",
+          "states": "checking → routed.",
+          "mvp": "two entry paths."
+        }
+      },
+      {
+        "i": 7,
+        "file": "07.png",
+        "label": "You’ve been invited",
+        "w": 360,
+        "h": 768,
+        "matched": "8. You've been invited",
+        "card": {
+          "purpose": "confirm a pre-loaded record (invited/WL).",
+          "decision": "\"Is this you?\" against name/role/site; \"This isn't me\" branches to self-declare.",
+          "states": "confirm, reject.",
+          "mvp": "invited path."
+        }
+      },
+      {
+        "i": 8,
+        "file": "08.png",
+        "label": "Number not recognised",
+        "w": 360,
+        "h": 768,
+        "matched": "9. Number not recognised",
+        "card": {
+          "purpose": "handle a number with no pre-loaded record.",
+          "decision": "informational, routes to self-declare or help — never a dead end.",
+          "states": "not-found.",
+          "mvp": "inform-don't-block; shared-number handling."
+        }
+      },
+      {
+        "i": 9,
+        "file": "09.png",
+        "label": "Your name",
+        "w": 360,
+        "h": 768,
+        "matched": "10. Your name",
+        "card": {
+          "purpose": "self-declare identity (OA).",
+          "decision": "minimal — first/last name only.",
+          "states": "empty, entered.",
+          "mvp": "self-declare path, minimal entry."
+        }
+      },
+      {
+        "i": 10,
+        "file": "10.png",
+        "label": "Your role",
+        "w": 360,
+        "h": 768,
+        "matched": "11. Your role",
+        "card": {
+          "purpose": "set Practitioner or Principal.",
+          "decision": "two cards, teaching derived — recognition over branching questions; classification data (owner/teaches) written behind the choice; no Assistant.",
+          "states": "practitioner, principal.",
+          "mvp": "role classification."
+        }
+      },
+      {
+        "i": 11,
+        "file": "11.png",
+        "label": "Your preschool",
+        "w": 360,
+        "h": 768,
+        "matched": "12. Your preschool",
+        "card": {
+          "purpose": "minimal site creation (principal).",
+          "decision": "one field — \"What's your preschool called?\" — changeable later; fuller details scaffolded.",
+          "states": "empty, entered.",
+          "mvp": "stripped-down onboarding (name + one class)."
+        }
+      },
+      {
+        "i": 12,
+        "file": "12.png",
+        "label": "Preschool code",
+        "w": 360,
+        "h": 768,
+        "matched": "13. Preschool code",
+        "card": {
+          "purpose": "join an existing site (practitioner).",
+          "decision": "join by QR/code — no long setup.",
+          "states": "empty, invalid code, joined.",
+          "mvp": "join by tenant link/QR."
+        }
+      },
+      {
+        "i": 13,
+        "file": "13.png",
+        "label": "Add your ID document — onboarding",
+        "w": 360,
+        "h": 768,
+        "matched": "14. Add your ID document — onboarding",
+        "card": {
+          "purpose": "identity capture for safeguarding tenants.",
+          "decision": "document-type selector + SA-ID checksum (derives DOB); non-blocking, deferrable (\"do this later\"); only hard gate is closed-tenant mismatch.",
+          "states": "valid, invalid (inline), passport/other, closed-tenant mismatch, offline, deferred.",
+          "mvp": "identity document, required for SmartStart, optional/config for OA."
+        }
+      },
+      {
+        "i": 14,
+        "file": "14.png",
+        "label": "All set",
+        "w": 360,
+        "h": 768,
+        "matched": "15. All set",
+        "card": {
+          "purpose": "confirm completion, route to Home.",
+          "decision": "surfaces deferred items as \"complete your profile.\"",
+          "states": "done.",
+          "mvp": "scaffold-over-time."
+        }
+      },
+      {
+        "i": 15,
+        "file": "15.png",
+        "label": "Unlock with PIN",
+        "w": 360,
+        "h": 768,
+        "matched": "16. Unlock with PIN",
+        "card": {
+          "purpose": "fast re-entry for returning users.",
+          "decision": "PIN unlock works offline; Forgot-PIN recovers by OTP.",
+          "states": "enter, wrong PIN (retriable), forgot.",
+          "mvp": "PIN unlock, no lockouts."
+        }
+      },
+      {
+        "i": 16,
+        "file": "16.png",
+        "label": "Reset your PIN",
+        "w": 360,
+        "h": 768,
+        "matched": "17. Reset your PIN",
+        "card": {
+          "purpose": "recover a forgotten PIN.",
+          "decision": "re-verify by OTP, then set a new PIN — no lockout.",
+          "states": "verify, set new.",
+          "mvp": "forgiving recovery."
+        }
+      },
+      {
+        "i": 17,
+        "file": "17.png",
+        "label": "Opening",
+        "w": 360,
+        "h": 768,
+        "matched": "18. Opening",
+        "card": {
+          "purpose": "straight-to-Home path (valid session, no PIN).",
+          "decision": "no friction when none is needed.",
+          "states": "opening.",
+          "mvp": "returning-user routing."
+        }
+      },
+      {
+        "i": 18,
+        "file": "18.png",
+        "label": "Returning user flow",
+        "w": 360,
+        "h": 768,
+        "matched": "19. Returning user flow",
+        "card": {
+          "purpose": "documents the three returning-user outcomes (unlock / straight-to-home / sign-in). Not an app screen — a decision-flow note. Keep as reference.",
+          "decision": null,
+          "states": null,
+          "mvp": null
+        }
+      },
+      {
+        "i": 19,
+        "file": "19.png",
+        "label": "The full flow",
+        "w": 360,
+        "h": 1453,
+        "matched": "20. The full flow",
+        "card": {
+          "purpose": "the end-to-end onboarding map. Reference annotation, not an app screen.",
+          "decision": null,
+          "states": null,
+          "mvp": null
+        }
+      }
+    ]
+  },
+  {
+    "flow": "Home",
+    "screens": [
+      {
+        "i": 35,
+        "file": "35.png",
+        "label": "Home — register due",
+        "w": 360,
+        "h": 768,
+        "matched": "36. Home — register due (default)",
+        "card": {
+          "purpose": "tell the practitioner the single most important thing now.",
+          "decision": "one context-aware Today card (overline + one-line + primary button) + a quiet \"a few things need a look\" line; no category tiles. Priority ladder picks the card.",
+          "states": "this is the default (register).",
+          "mvp": "daily loop, one primary action."
+        }
+      },
+      {
+        "i": 36,
+        "file": "36.png",
+        "label": "Home — consent imminent",
+        "w": 360,
+        "h": 768,
+        "matched": "37. Home — consent imminent",
+        "card": {
+          "purpose": "same home, re-prioritised.",
+          "decision": "a consent deadline outranks the register, so consent becomes the hero — demonstrates context-awareness.",
+          "states": "consent-urgent.",
+          "mvp": "time-critical consent surfaced."
+        }
+      },
+      {
+        "i": 37,
+        "file": "37.png",
+        "label": "Home — all clear",
+        "w": 360,
+        "h": 768,
+        "matched": "38. Home — all clear",
+        "card": {
+          "purpose": "reassurance when nothing needs doing.",
+          "decision": "a calm \"you're all caught up\" — calm is the reward, not a blank screen.",
+          "states": "all-clear.",
+          "mvp": "low cognitive load."
+        }
+      },
+      {
+        "i": 38,
+        "file": "38.png",
+        "label": "Home — month start",
+        "w": 360,
+        "h": 768,
+        "matched": "39. Home — month start",
+        "card": {
+          "purpose": "principal/oversight prompt at month start (e.g. \"who's paid?\").",
+          "decision": "surfaces the month's money task when relevant.",
+          "states": "month-start.",
+          "mvp": "fee tracking prompt."
+        }
+      },
+      {
+        "i": 39,
+        "file": "39.png",
+        "label": "Menu",
+        "w": 360,
+        "h": 768,
+        "matched": "40. Menu",
+        "card": {
+          "purpose": "the long-tail navigation (☰).",
+          "decision": "everything rarer than the bottom-bar destinations lives here — keeps Home focused.",
+          "states": "open.",
+          "mvp": "hybrid hub + bar."
+        }
+      },
+      {
+        "i": 42,
+        "file": "42.png",
+        "label": "Needs a look — all",
+        "w": 360,
+        "h": 768,
+        "matched": "43. Needs a look — all",
+        "card": {
+          "purpose": "the full \"things that need attention\" list behind the Home line.",
+          "decision": "aggregates incomplete registrations, approaching consent deadlines, cover needs.",
+          "states": "has-items, empty.",
+          "mvp": "proactive flagging of incomplete records."
+        }
+      },
+      {
+        "i": 85,
+        "file": "85.png",
+        "label": "Home — offline",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      }
+    ]
+  },
+  {
+    "flow": "Classes & Children",
+    "screens": [
+      {
+        "i": 43,
+        "file": "43.png",
+        "label": "Classes",
+        "w": 360,
+        "h": 768,
+        "matched": "44. Classes",
+        "card": {
+          "purpose": "see and open classes.",
+          "decision": "classes live in the classroom section, not profile; counts derived.",
+          "states": "list, empty.",
+          "mvp": "class management."
+        }
+      },
+      {
+        "i": 44,
+        "file": "44.png",
+        "label": "Class detail",
+        "w": 360,
+        "h": 770,
+        "matched": "45. Class detail",
+        "card": {
+          "purpose": "a class roster + launch attendance.",
+          "decision": "opens the register; shows the children in the class.",
+          "states": "roster, empty.",
+          "mvp": "per-class attendance."
+        }
+      },
+      {
+        "i": 45,
+        "file": "45.png",
+        "label": "Add a class",
+        "w": 360,
+        "h": 809,
+        "matched": "46. Add a class",
+        "card": {
+          "purpose": "create/edit a class.",
+          "decision": "name (free text, no age bands), active days + times (filter attendance), assign practitioner; empty class allowed; no ratios.",
+          "states": "create, edit.",
+          "mvp": "class creation rules."
+        }
+      },
+      {
+        "i": 46,
+        "file": "46.png",
+        "label": "Child profile",
+        "w": 360,
+        "h": 853,
+        "matched": "47. Child profile",
+        "card": {
+          "purpose": "the record for one child.",
+          "decision": "minimum shown, rest scaffolded; consent status; mark-as-left.",
+          "states": "complete, incomplete (flagged), left.",
+          "mvp": "child registration + management."
+        }
+      },
+      {
+        "i": 47,
+        "file": "47.png",
+        "label": "Child — personal information",
+        "w": 360,
+        "h": 768,
+        "matched": "49. Child — personal information",
+        "card": {
+          "purpose": "view/edit the child's details.",
+          "decision": "minimum required; DOB drives age; child ID optional.",
+          "states": "view, edit.",
+          "mvp": "minimum registration fields."
+        }
+      },
+      {
+        "i": 48,
+        "file": "48.png",
+        "label": "Child — your notes",
+        "w": 360,
+        "h": 768,
+        "matched": "50. Child — your notes",
+        "card": {
+          "purpose": "free-text notes on a child.",
+          "decision": "optional, practitioner's own notes.",
+          "states": "empty, has-notes.",
+          "mvp": "optional fields."
+        }
+      },
+      {
+        "i": 49,
+        "file": "49.png",
+        "label": "Child — no longer attending",
+        "w": 360,
+        "h": 768,
+        "matched": "51. Child — no longer attending (mark as left)",
+        "card": {
+          "purpose": "deactivate a child.",
+          "decision": "easy and reversible; single free-text reason; no automated deactivation (operator owns the data).",
+          "states": "confirm, left.",
+          "mvp": "easy deactivation."
+        }
+      },
+      {
+        "i": 84,
+        "file": "84.png",
+        "label": "Preschool fees",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      }
+    ]
+  },
+  {
+    "flow": "Attendance",
+    "screens": [
+      {
+        "i": 50,
+        "file": "50.png",
+        "label": "Take attendance",
+        "w": 360,
+        "h": 768,
+        "matched": "52. Take attendance",
+        "card": {
+          "purpose": "the daily register.",
+          "decision": "all default present, tap to mark absent, submit — fastest register for paper users; single owner per class; incomplete registration and missing/overdue consent are flagged, never blocked.",
+          "states": "all-present, some-absent, incomplete flag, consent flag (with \"send consent request\" alongside the mark), submitted.",
+          "mvp": "attendance always recordable (decision #2)."
+        }
+      },
+      {
+        "i": 51,
+        "file": "51.png",
+        "label": "Attendance saved",
+        "w": 360,
+        "h": 768,
+        "matched": "53. Attendance saved",
+        "card": {
+          "purpose": "confirm the register is recorded.",
+          "decision": "reassures, and confirms it will sync if offline.",
+          "states": "saved, saved-offline.",
+          "mvp": "offline-first."
+        }
+      },
+      {
+        "i": 52,
+        "file": "52.png",
+        "label": "Register status",
+        "w": 360,
+        "h": 768,
+        "matched": "54. Register status",
+        "card": {
+          "purpose": "see which registers are done/incomplete per class.",
+          "decision": "submitted and incomplete visible.",
+          "states": "complete, incomplete.",
+          "mvp": "submitted/incomplete visibility."
+        }
+      },
+      {
+        "i": 53,
+        "file": "53.png",
+        "label": "Change a register",
+        "w": 360,
+        "h": 768,
+        "matched": "55. Change a register",
+        "card": {
+          "purpose": "edit a past register.",
+          "decision": "editable correction.",
+          "states": "editing.",
+          "mvp": "edit past attendance."
+        }
+      }
+    ]
+  },
+  {
+    "flow": "Registration & Consent",
+    "screens": [
+      {
+        "i": 54,
+        "file": "54.png",
+        "label": "Share a registration link",
+        "w": 360,
+        "h": 768,
+        "matched": "56. Share a registration link",
+        "card": {
+          "purpose": "send registration to a caregiver.",
+          "decision": "practitioner shares a link (e.g. WhatsApp); caregiver completes the child's details on the web form.",
+          "states": "share, copied.",
+          "mvp": "caregiver self-registration."
+        }
+      },
+      {
+        "i": 55,
+        "file": "55.png",
+        "label": "Registration links",
+        "w": 360,
+        "h": 768,
+        "matched": "57. Registration links",
+        "card": {
+          "purpose": "track links shared and their status.",
+          "decision": "shows pending/completed self-registrations.",
+          "states": "pending, completed.",
+          "mvp": "partial-registration visibility."
+        }
+      },
+      {
+        "i": 56,
+        "file": "56.png",
+        "label": "Consent — class",
+        "w": 360,
+        "h": 768,
+        "matched": "58. Consent — class",
+        "card": {
+          "purpose": "consent status across a class.",
+          "decision": "shows who has/needs consent.",
+          "states": "mixed, all-consented.",
+          "mvp": "consent gates the record."
+        }
+      },
+      {
+        "i": 57,
+        "file": "57.png",
+        "label": "Send consent request",
+        "w": 360,
+        "h": 768,
+        "matched": "59. Send consent request",
+        "card": {
+          "purpose": "request consent from a caregiver.",
+          "decision": "one-tap request; available alongside attendance (never blocks it).",
+          "states": "send, sent.",
+          "mvp": "consent request."
+        }
+      },
+      {
+        "i": 58,
+        "file": "58.png",
+        "label": "Consent sent",
+        "w": 360,
+        "h": 768,
+        "matched": "60. Consent sent",
+        "card": {
+          "purpose": "confirm the request went out.",
+          "decision": null,
+          "states": "sent.",
+          "mvp": "consent lifecycle."
+        }
+      },
+      {
+        "i": 59,
+        "file": "59.png",
+        "label": "Consent deadline warning",
+        "w": 360,
+        "h": 768,
+        "matched": "61. Consent deadline warning",
+        "card": {
+          "purpose": "warn that a consent deadline is approaching.",
+          "decision": "informational escalation; after the deadline, unconsented data is deleted (records/backend).",
+          "states": "approaching, overdue.",
+          "mvp": "consent deadline + deletion."
+        }
+      },
+      {
+        "i": 60,
+        "file": "60.png",
+        "label": "Consent received",
+        "w": 360,
+        "h": 768,
+        "matched": "62. Consent received",
+        "card": {
+          "purpose": "confirm consent captured; the record becomes fully usable.",
+          "decision": null,
+          "states": "received.",
+          "mvp": "consent gates usability."
+        }
+      },
+      {
+        "i": 61,
+        "file": "61.png",
+        "label": "Messaging · consent (caregiver)",
+        "w": 360,
+        "h": 768,
+        "matched": "63. Messaging · consent (caregiver)",
+        "card": {
+          "purpose": "the caregiver's messaging opt-out.",
+          "decision": "a caregiver can opt out of WhatsApp / withdraw consent at any time.",
+          "states": "on, withdrawn.",
+          "mvp": "withdrawable messaging consent."
+        }
+      }
+    ]
+  },
+  {
+    "flow": "Resources",
+    "screens": [
+      {
+        "i": 20,
+        "file": "20.png",
+        "label": "Resources — categories",
+        "w": 360,
+        "h": 768,
+        "matched": "21. Resources — categories",
+        "card": {
+          "purpose": "the info-corner entry, by category.",
+          "decision": "categorised (Running your preschool, Early learning activities, Health & safety, Funding & subsidies).",
+          "states": "list.",
+          "mvp": "resources ('info corner')."
+        }
+      },
+      {
+        "i": 21,
+        "file": "21.png",
+        "label": "Resources — list",
+        "w": 360,
+        "h": 768,
+        "matched": "22. Resources — list",
+        "card": {
+          "purpose": "resources within a category.",
+          "decision": "name, description, link, data-free flag; like + flag-broken.",
+          "states": "list, empty.",
+          "mvp": "resource attributes."
+        }
+      },
+      {
+        "i": 22,
+        "file": "22.png",
+        "label": "Resource detail",
+        "w": 360,
+        "h": 768,
+        "matched": "23. Resource detail",
+        "card": {
+          "purpose": "a single resource.",
+          "decision": "opens the link; if not data-free, warns first; like / report-broken.",
+          "states": "default, data-warning.",
+          "mvp": "data-free flag."
+        }
+      },
+      {
+        "i": 62,
+        "file": "62.png",
+        "label": "Resources",
+        "w": 360,
+        "h": 768,
+        "matched": "64. Resources",
+        "card": {
+          "purpose": "the Resources tab landing.",
+          "decision": "same taxonomy as the categories screen.",
+          "states": "default.",
+          "mvp": "resources."
+        }
+      }
+    ]
+  },
+  {
+    "flow": "Feedback & Notifications",
+    "screens": [
+      {
+        "i": 23,
+        "file": "23.png",
+        "label": "Feedback — type",
+        "w": 360,
+        "h": 768,
+        "matched": "24. Feedback — type",
+        "card": {
+          "purpose": "choose feedback kind.",
+          "decision": "bug vs programme (idea). Routing differs.",
+          "states": "select.",
+          "mvp": "feedback loop."
+        }
+      },
+      {
+        "i": 24,
+        "file": "24.png",
+        "label": "Feedback — write",
+        "w": 360,
+        "h": 768,
+        "matched": "25. Feedback — write",
+        "card": {
+          "purpose": "write the feedback.",
+          "decision": "title + body.",
+          "states": "empty, entered.",
+          "mvp": "feedback capture."
+        }
+      },
+      {
+        "i": 25,
+        "file": "25.png",
+        "label": "Feedback sent",
+        "w": 360,
+        "h": 768,
+        "matched": "26. Feedback sent",
+        "card": {
+          "purpose": "confirm submission (queues offline).",
+          "decision": null,
+          "states": "sent, queued-offline.",
+          "mvp": "offline-first feedback."
+        }
+      },
+      {
+        "i": 26,
+        "file": "26.png",
+        "label": "My feedback",
+        "w": 360,
+        "h": 768,
+        "matched": "27. My feedback",
+        "card": {
+          "purpose": "list the user's feedback and its status.",
+          "decision": null,
+          "states": "list, empty.",
+          "mvp": "full feedback visibility."
+        }
+      },
+      {
+        "i": 27,
+        "file": "27.png",
+        "label": "Feedback thread",
+        "w": 360,
+        "h": 768,
+        "matched": "28. Feedback thread",
+        "card": {
+          "purpose": "follow a feedback conversation.",
+          "decision": "bug → admin; programme → coach + admin; replies appear here.",
+          "states": "open, replied.",
+          "mvp": "feedback routing."
+        }
+      },
+      {
+        "i": 40,
+        "file": "40.png",
+        "label": "Notifications",
+        "w": 360,
+        "h": 768,
+        "matched": "41. Notifications",
+        "card": {
+          "purpose": "reminders and coach-visit records.",
+          "decision": "registers, consent deadlines, visits — nothing else; coach-visit record is WL-only.",
+          "states": "list, empty.",
+          "mvp": "nudges + coach visit record."
+        }
+      },
+      {
+        "i": 41,
+        "file": "41.png",
+        "label": "Notification settings",
+        "w": 360,
+        "h": 768,
+        "matched": "42. Notification settings",
+        "card": {
+          "purpose": "control nudge volume.",
+          "decision": "channel + volume — every nudge needs a purpose.",
+          "states": "default.",
+          "mvp": "tightly controlled nudges."
+        }
+      },
+      {
+        "i": 83,
+        "file": "83.png",
+        "label": "Coach visit",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      }
+    ]
+  },
+  {
+    "flow": "Staff & Site",
+    "screens": [
+      {
+        "i": 28,
+        "file": "28.png",
+        "label": "Staff list",
+        "w": 360,
+        "h": 768,
+        "matched": "29. Staff list",
+        "card": {
+          "purpose": "see practitioners at the site.",
+          "decision": "view + profiles; WL/OA distinction and practitioner states preserved.",
+          "states": "list, empty.",
+          "mvp": "staff management."
+        }
+      },
+      {
+        "i": 29,
+        "file": "29.png",
+        "label": "Staff — mark on leave",
+        "w": 360,
+        "h": 768,
+        "matched": "30. Staff — mark on leave",
+        "card": {
+          "purpose": "mark a practitioner on leave.",
+          "decision": "keeps the class covered by triggering reassignment.",
+          "states": "mark, on-leave.",
+          "mvp": "basic leave/absence."
+        }
+      },
+      {
+        "i": 30,
+        "file": "30.png",
+        "label": "Reassign classes",
+        "w": 360,
+        "h": 768,
+        "matched": "31. Reassign classes",
+        "card": {
+          "purpose": "move a class to another practitioner.",
+          "decision": "so attendance continues.",
+          "states": "select, reassign.",
+          "mvp": "reassign so attendance can be taken."
+        }
+      },
+      {
+        "i": 31,
+        "file": "31.png",
+        "label": "Classes reassigned",
+        "w": 360,
+        "h": 768,
+        "matched": "32. Classes reassigned",
+        "card": {
+          "purpose": "confirm reassignment.",
+          "decision": null,
+          "states": "done.",
+          "mvp": "leave handling."
+        }
+      },
+      {
+        "i": 69,
+        "file": "69.png",
+        "label": "Preschool details — practitioner",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      },
+      {
+        "i": 70,
+        "file": "70.png",
+        "label": "Preschool details — principal",
+        "w": 360,
+        "h": 768,
+        "matched": "tail: Site details (editable)",
+        "card": {
+          "purpose": "programme/site name, optional location + 'same as home address' toggle; owned by principal here.",
+          "decision": null,
+          "states": null,
+          "mvp": "site info."
+        }
+      },
+      {
+        "i": 71,
+        "file": "71.png",
+        "label": "Switch preschool",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      },
+      {
+        "i": 73,
+        "file": "73.png",
+        "label": "Staff",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      },
+      {
+        "i": 74,
+        "file": "74.png",
+        "label": "Add staff",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      },
+      {
+        "i": 75,
+        "file": "75.png",
+        "label": "Staff detail",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      },
+      {
+        "i": 76,
+        "file": "76.png",
+        "label": "Staff removed",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      },
+      {
+        "i": 77,
+        "file": "77.png",
+        "label": "Income",
+        "w": 360,
+        "h": 768,
+        "matched": "tail: Income dashboard",
+        "card": {
+          "purpose": "money in/out this month + route to summary; simple, not a budgeting tool.",
+          "decision": null,
+          "states": null,
+          "mvp": "§3.5 income."
+        }
+      },
+      {
+        "i": 78,
+        "file": "78.png",
+        "label": "Who’s paid",
+        "w": 360,
+        "h": 1269,
+        "matched": "tail: Who’s paid",
+        "card": {
+          "purpose": "monthly checklist auto-populated from expected fees.",
+          "decision": null,
+          "states": null,
+          "mvp": "'which caregivers paid?'."
+        }
+      },
+      {
+        "i": 79,
+        "file": "79.png",
+        "label": "Payment saved",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      },
+      {
+        "i": 80,
+        "file": "80.png",
+        "label": "Add income or expense",
+        "w": 360,
+        "h": 768,
+        "matched": "tail: Add income or expense",
+        "card": {
+          "purpose": "unified: income/expense → type → amount → date; income types fees/subsidy/stipend/donation/other.",
+          "decision": null,
+          "states": null,
+          "mvp": "unified capture (decision #3)."
+        }
+      },
+      {
+        "i": 81,
+        "file": "81.png",
+        "label": "This month’s summary",
+        "w": 360,
+        "h": 768,
+        "matched": "tail: Month summary",
+        "card": {
+          "purpose": "money in, out, what's left; no exports.",
+          "decision": null,
+          "states": null,
+          "mvp": "simple summary."
+        }
+      },
+      {
+        "i": 82,
+        "file": "82.png",
+        "label": "Set fees",
+        "w": 360,
+        "h": 1239,
+        "matched": "tail: Set fees",
+        "card": {
+          "purpose": "per class (age group), adjustable per child, bulk-updatable.",
+          "decision": null,
+          "states": null,
+          "mvp": "fees per class + per child."
+        }
+      }
+    ]
+  },
+  {
+    "flow": "Profile",
+    "screens": [
+      {
+        "i": 32,
+        "file": "32.png",
+        "label": "Profile — onboarding",
+        "w": 360,
+        "h": 768,
+        "matched": "33. Profile — onboarding",
+        "card": {
+          "purpose": "the profile completeness prompt post-onboarding.",
+          "decision": "a completeness card with one next action; scaffold, not nag.",
+          "states": "items-remaining, complete.",
+          "mvp": "scaffold-over-time."
+        }
+      },
+      {
+        "i": 63,
+        "file": "63.png",
+        "label": "Profile — app",
+        "w": 360,
+        "h": 1629,
+        "matched": "65. Profile — app",
+        "card": {
+          "purpose": "the profile home in daily use.",
+          "decision": "sections (personal, contact, site, network, messaging), help, switch, sign out.",
+          "states": "default.",
+          "mvp": "profile management."
+        }
+      },
+      {
+        "i": 64,
+        "file": "64.png",
+        "label": "Personal details",
+        "w": 360,
+        "h": 768,
+        "matched": "66. Personal details",
+        "card": {
+          "purpose": "view/edit name (and role).",
+          "decision": "editable, minimal.",
+          "states": "view, edit.",
+          "mvp": "profile fields."
+        }
+      },
+      {
+        "i": 65,
+        "file": "65.png",
+        "label": "Contact",
+        "w": 360,
+        "h": 768,
+        "matched": "67. Contact",
+        "card": {
+          "purpose": "cell number + optional email.",
+          "decision": "editable.",
+          "states": "view, edit.",
+          "mvp": "contact info."
+        }
+      },
+      {
+        "i": 66,
+        "file": "66.png",
+        "label": "Network details",
+        "w": 360,
+        "h": 768,
+        "matched": "68. Network details",
+        "card": {
+          "purpose": "show club and coach/mentor.",
+          "decision": "read-only, tenant-set (\"set by [tenant]\") — visible but not editable.",
+          "states": "populated, empty.",
+          "mvp": "network details visible-not-editable."
+        }
+      },
+      {
+        "i": 67,
+        "file": "67.png",
+        "label": "Messaging & consent",
+        "w": 360,
+        "h": 768,
+        "matched": "69. Messaging & consent",
+        "card": {
+          "purpose": "the user's own messaging consent.",
+          "decision": "see and withdraw their own WhatsApp consent at any time (blocks nothing); Terms/Privacy links. Distinct from the caregiver opt-out.",
+          "states": "on, withdrawn, offline.",
+          "mvp": "withdrawable messaging consent (POPIA)."
+        }
+      },
+      {
+        "i": 68,
+        "file": "68.png",
+        "label": "Add your ID document — app",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      },
+      {
+        "i": 72,
+        "file": "72.png",
+        "label": "Help & support",
+        "w": 360,
+        "h": 768,
+        "matched": null,
+        "card": null
+      }
+    ]
+  },
+  {
+    "flow": "Leave",
+    "screens": [
+      {
+        "i": 33,
+        "file": "33.png",
+        "label": "Leave programme",
+        "w": 360,
+        "h": 768,
+        "matched": "34. Leave programme",
+        "card": {
+          "purpose": "a practitioner leaves a site.",
+          "decision": "leaving lets them establish or join a new site.",
+          "states": "default.",
+          "mvp": "practitioner can leave."
+        }
+      },
+      {
+        "i": 34,
+        "file": "34.png",
+        "label": "Leave — confirm",
+        "w": 360,
+        "h": 768,
+        "matched": "35. Leave — confirm",
+        "card": {
+          "purpose": "confirm leaving.",
+          "decision": "clear consequence, reversible path to a new site.",
+          "states": "confirm.",
+          "mvp": "leave → new site."
+        }
+      }
+    ]
+  }
+]

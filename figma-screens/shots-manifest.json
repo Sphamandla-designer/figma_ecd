@@ -1,0 +1,604 @@
+[
+  {
+    "i": 0,
+    "file": "00.png",
+    "label": "Loading",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 1,
+    "file": "01.png",
+    "label": "Enter phone number",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 2,
+    "file": "02.png",
+    "label": "Enter the code",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 3,
+    "file": "03.png",
+    "label": "Terms & consent",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 4,
+    "file": "04.png",
+    "label": "WhatsApp consent",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 5,
+    "file": "05.png",
+    "label": "Create a PIN",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 6,
+    "file": "06.png",
+    "label": "Checking your details",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 7,
+    "file": "07.png",
+    "label": "You’ve been invited",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 8,
+    "file": "08.png",
+    "label": "Number not recognised",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 9,
+    "file": "09.png",
+    "label": "Your name",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 10,
+    "file": "10.png",
+    "label": "Your role",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 11,
+    "file": "11.png",
+    "label": "Your preschool",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 12,
+    "file": "12.png",
+    "label": "Preschool code",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 13,
+    "file": "13.png",
+    "label": "Add your ID document — onboarding",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 14,
+    "file": "14.png",
+    "label": "All set",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 15,
+    "file": "15.png",
+    "label": "Unlock with PIN",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 16,
+    "file": "16.png",
+    "label": "Reset your PIN",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 17,
+    "file": "17.png",
+    "label": "Opening",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 18,
+    "file": "18.png",
+    "label": "Returning user flow",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 19,
+    "file": "19.png",
+    "label": "The full flow",
+    "w": 360,
+    "h": 1453
+  },
+  {
+    "i": 20,
+    "file": "20.png",
+    "label": "Resources — categories",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 21,
+    "file": "21.png",
+    "label": "Resources — list",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 22,
+    "file": "22.png",
+    "label": "Resource detail",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 23,
+    "file": "23.png",
+    "label": "Feedback — type",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 24,
+    "file": "24.png",
+    "label": "Feedback — write",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 25,
+    "file": "25.png",
+    "label": "Feedback sent",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 26,
+    "file": "26.png",
+    "label": "My feedback",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 27,
+    "file": "27.png",
+    "label": "Feedback thread",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 28,
+    "file": "28.png",
+    "label": "Staff list",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 29,
+    "file": "29.png",
+    "label": "Staff — mark on leave",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 30,
+    "file": "30.png",
+    "label": "Reassign classes",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 31,
+    "file": "31.png",
+    "label": "Classes reassigned",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 32,
+    "file": "32.png",
+    "label": "Profile — onboarding",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 33,
+    "file": "33.png",
+    "label": "Leave programme",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 34,
+    "file": "34.png",
+    "label": "Leave — confirm",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 35,
+    "file": "35.png",
+    "label": "Home — register due",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 36,
+    "file": "36.png",
+    "label": "Home — consent imminent",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 37,
+    "file": "37.png",
+    "label": "Home — all clear",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 38,
+    "file": "38.png",
+    "label": "Home — month start",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 39,
+    "file": "39.png",
+    "label": "Menu",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 40,
+    "file": "40.png",
+    "label": "Notifications",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 41,
+    "file": "41.png",
+    "label": "Notification settings",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 42,
+    "file": "42.png",
+    "label": "Needs a look — all",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 43,
+    "file": "43.png",
+    "label": "Classes",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 44,
+    "file": "44.png",
+    "label": "Class detail",
+    "w": 360,
+    "h": 770
+  },
+  {
+    "i": 45,
+    "file": "45.png",
+    "label": "Add a class",
+    "w": 360,
+    "h": 809
+  },
+  {
+    "i": 46,
+    "file": "46.png",
+    "label": "Child profile",
+    "w": 360,
+    "h": 853
+  },
+  {
+    "i": 47,
+    "file": "47.png",
+    "label": "Child — personal information",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 48,
+    "file": "48.png",
+    "label": "Child — your notes",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 49,
+    "file": "49.png",
+    "label": "Child — no longer attending",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 50,
+    "file": "50.png",
+    "label": "Take attendance",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 51,
+    "file": "51.png",
+    "label": "Attendance saved",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 52,
+    "file": "52.png",
+    "label": "Register status",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 53,
+    "file": "53.png",
+    "label": "Change a register",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 54,
+    "file": "54.png",
+    "label": "Share a registration link",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 55,
+    "file": "55.png",
+    "label": "Registration links",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 56,
+    "file": "56.png",
+    "label": "Consent — class",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 57,
+    "file": "57.png",
+    "label": "Send consent request",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 58,
+    "file": "58.png",
+    "label": "Consent sent",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 59,
+    "file": "59.png",
+    "label": "Consent deadline warning",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 60,
+    "file": "60.png",
+    "label": "Consent received",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 61,
+    "file": "61.png",
+    "label": "Messaging · consent (caregiver)",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 62,
+    "file": "62.png",
+    "label": "Resources",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 63,
+    "file": "63.png",
+    "label": "Profile — app",
+    "w": 360,
+    "h": 1629
+  },
+  {
+    "i": 64,
+    "file": "64.png",
+    "label": "Personal details",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 65,
+    "file": "65.png",
+    "label": "Contact",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 66,
+    "file": "66.png",
+    "label": "Network details",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 67,
+    "file": "67.png",
+    "label": "Messaging & consent",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 68,
+    "file": "68.png",
+    "label": "Add your ID document — app",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 69,
+    "file": "69.png",
+    "label": "Preschool details — practitioner",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 70,
+    "file": "70.png",
+    "label": "Preschool details — principal",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 71,
+    "file": "71.png",
+    "label": "Switch preschool",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 72,
+    "file": "72.png",
+    "label": "Help & support",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 73,
+    "file": "73.png",
+    "label": "Staff",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 74,
+    "file": "74.png",
+    "label": "Add staff",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 75,
+    "file": "75.png",
+    "label": "Staff detail",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 76,
+    "file": "76.png",
+    "label": "Staff removed",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 77,
+    "file": "77.png",
+    "label": "Income",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 78,
+    "file": "78.png",
+    "label": "Who’s paid",
+    "w": 360,
+    "h": 1269
+  },
+  {
+    "i": 79,
+    "file": "79.png",
+    "label": "Payment saved",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 80,
+    "file": "80.png",
+    "label": "Add income or expense",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 81,
+    "file": "81.png",
+    "label": "This month’s summary",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 82,
+    "file": "82.png",
+    "label": "Set fees",
+    "w": 360,
+    "h": 1239
+  },
+  {
+    "i": 83,
+    "file": "83.png",
+    "label": "Coach visit",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 84,
+    "file": "84.png",
+    "label": "Preschool fees",
+    "w": 360,
+    "h": 768
+  },
+  {
+    "i": 85,
+    "file": "85.png",
+    "label": "Home — offline",
+    "w": 360,
+    "h": 768
+  }
+]
